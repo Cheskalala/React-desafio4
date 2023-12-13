@@ -7,8 +7,10 @@ const App = () => {
   return (
     <div className="m-5">
       <h1>Welcome to the Country Explorer</h1>
+      <div className='grid-auto'>
+        <MiApi />
+      </div>
       
-      <MiApi />
     </div>
   );
 };

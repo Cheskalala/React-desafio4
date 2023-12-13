@@ -1,35 +1,48 @@
 // InfoPaises.js
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, CardBody, CardImg, CardText, CardTitle } from 'react-bootstrap';
 
 const InfoPaises = ({ country }) => {
   return (
-    <Card>
-      <div className='d-flex'>
+    <Card className=' text-center bg-warning-subtle'style={{ height: '575px', }}>
+         <CardBody  >
+            <CardImg className='mb-3'
+              src={country.flags.png}
+              alt={`${country.name.common} Flag`}
+              style={{ width: '100%',height: '200px' }}/>
+          <CardTitle className='fw-bolder'> {country.name.common}</CardTitle>
+
+      <CardText className=''>
+
         <div>
-          <h3>{country.name.common}</h3>
-          <p>Capital: {country.capital}</p>
-          <p>Moneda:</p>
-          <ul style={{ listStyleType: 'none'}}> 
-            {Object.entries(country.currencies || {}).map(([code, currency]) => (
-              <li key={code}>
-                {code}: ({currency.symbol}) {currency.name} 
-              </li>
-            ))}
-          </ul>
-        </div>
-        
-        <div>
-  <p>Idiomas:</p>
-  <ul>
-    {country.languages && Object.keys(country.languages).map((key, index) => (
-      <li key={index}>{country.languages[key]}</li>
+        <div className='d-flex col fw-bold me-2'>Capital: <p className='fw-normal' >{country.capital}</p></div>
+<div className='d-flex col '>
+  <div className='fw-bold me-1'>Moneda:</div>
+  <ul style={{ listStyleType: 'none'}}>
+    {Object.entries(country.currencies || {}).map(([code, currency]) => (
+      <li  key={code}>
+        {code}: ({currency.symbol}) {currency.name}
+      </li>
     ))}
   </ul>
 </div>
         
-        <div>Bandera</div>
-      </div>
+        
+        
+<div className='d-flex col'>
+  <div className='fw-bold me-1'>Idiomas:</div>
+  <ul className='text-start' style={{ listStyleType: 'none' }}>
+  {country.languages && Object.keys(country.languages).map((code, index) => (
+    <li key={index}>
+      {code}: {country.languages[code]}
+    </li>
+  ))}
+  </ul>
+</div>
+</div>
+      </CardText>
+        
+        </CardBody>
     </Card>
   );
 };
