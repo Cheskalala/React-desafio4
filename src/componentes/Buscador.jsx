@@ -10,14 +10,24 @@ const Buscador = ({ onSearch }) => {
   };
 
   return (
-    <div>
+    <div className="input-group m-3 p-2 w-50 position-absolute top-50 start-50 translate-middle">
       <input
         type="text"
+        className="form-control"
         placeholder="Buscar por nombre..."
+        aria-label="Buscar por nombre..."
+        aria-describedby="button-addon2"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <button onClick={handleSearch}>Buscar</button>
+      <button
+        className="btn btn-danger"
+        type="button"
+        id="button-addon2"
+        onClick={handleSearch}
+      >
+        Buscar
+      </button>
     </div>
   );
 };

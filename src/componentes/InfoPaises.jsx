@@ -4,7 +4,7 @@ import { Card, CardBody, CardImg, CardText, CardTitle } from 'react-bootstrap';
 
 const InfoPaises = ({ country }) => {
   return (
-    <Card className=' text-center bg-warning-subtle'style={{ height: '575px', }}>
+    <Card className=' text-center cartas 'style={{ height: '450px', }}>
          <CardBody  >
             <CardImg className='mb-3'
               src={country.flags.png}
@@ -15,10 +15,10 @@ const InfoPaises = ({ country }) => {
       <CardText className=''>
 
         <div>
-        <div className='d-flex col fw-bold me-2'>Capital: <p className='fw-normal' >{country.capital}</p></div>
+        <div className='d-flex col fw-bold '>Capital: <p className='fw-normal ms-5' >{country.capital}</p></div>
 <div className='d-flex col '>
   <div className='fw-bold me-1'>Moneda:</div>
-  <ul style={{ listStyleType: 'none'}}>
+  <ul className='text-start' style={{ listStyleType: 'none' }}>
     {Object.entries(country.currencies || {}).map(([code, currency]) => (
       <li  key={code}>
         {code}: ({currency.symbol}) {currency.name}

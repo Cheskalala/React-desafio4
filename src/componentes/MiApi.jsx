@@ -60,7 +60,7 @@ const MiApi = () => {
   return (
     <div>
       <Buscador onSearch={handleSearch} />
-      <h2>List of Countries</h2>
+      
 {isFetch ? (
   <div className="row row-cols-1 row-cols-md-4 g-4">
     {filteredPaises.length > 0 ? (

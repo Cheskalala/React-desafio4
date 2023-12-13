@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.banner{
+    background: url(./assets/imgs/bannerr.png);
+    height: 550px;
+    background-size: cover;
+    
+}
+.body{
+    height: 100vh;
+    overflow: auto;
+    scrollbar-width: none; /* Para navegadores Firefox */
+    -ms-overflow-style: none; /* Para navegadores Microsoft Edge */
+    margin: 100px;
+}
+  
+  .body::-webkit-scrollbar {
+    display: none; /* Para navegadores basados en WebKit (Chrome, Safari) */
+  }
+.cartas{
+    background: #ffffff97;
+}
+.footer{
+    background: #ffffff97;
+    
+    height: 25vh;
+    width: 100vw;
+    text-align: center;
+
+}
+.textoFooter{
+    padding: 5% 35%;
+}
